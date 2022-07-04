@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload CSV File</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h1>Add new Person</h1>
+            <form method="POST" th:action="@{/savePerson}" modelAttribute="person">
+                <div class="form-group mt-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control-file" id="name">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" name="lastname" class="form-control-file" id="lastname">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" class="form-control-file" id="address">
+                    <label for="idColor">Color id</label>
+                    <input type="text" name="idColor" class="form-control-file" id="idColor">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

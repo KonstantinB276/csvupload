@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload CSV File</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <h1>File Upload Status</h1>
+            <button type="button" onclick="window.location.href='addNewPerson'" class="btn btn-primary">Add new person</button>
+            <div class="alert alert-danger" role="alert" th:if="${!status}">
+                <span th:text="${message}"></span>
+            </div>
+            <table class="table table-striped" th:if="${status}">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Zipcode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Color</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="bs, i : ${personList}">
+                    <th scope="row" th:text="${i.index + 1}"></th>
+                    <td th:text="${bs.id}"></td>
+                    <td th:text="${bs.name}"></td>
+                    <td th:text="${bs.lastname}"></td>
+                    <td th:text="${bs.address}"></td>
+                    <td th:text="${bs.zipcode}"></td>
+                    <td th:text="${bs.city}"></td>
+                    <td th:text="${bs.color}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
